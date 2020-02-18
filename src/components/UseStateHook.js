@@ -10,7 +10,7 @@ function UseStateHook() {
   }
   
   const loginContext = useContext(AuthContext);
-  console.log(loginContext.isAuth)
+  // console.log(loginContext.isAuth)
 
   return (
     <AuthContextProvider>

@@ -5,21 +5,25 @@ import UseEffectHook from './components/UseEffectHook'
 import UseRefHook from './components/UseRefHook'
 import UseCallBackHook from './components/UseCallBackHook'
 import UseMemoHook from './components/UseMemoHook'
-import AuthContextProvider from './components/authContext'
+import ShowPostsFromContext from './components/ShowPostsFromContext'
+import { PostsContextProvider } from './components/postsContext'
 
 function App() {
   return (
-    <AuthContextProvider>
-      <div className="App">
-        <br />
-        React Hooks ...
-        <UseStateHook />
-        <UseEffectHook />
-        <UseRefHook />
-        <UseCallBackHook />
-        <UseMemoHook />
-      </div>
-    </AuthContextProvider>
+    <div className="App">
+      <br />
+      React Hooks ...
+      <UseStateHook />
+      <UseEffectHook />
+      <UseRefHook />
+      <UseCallBackHook />
+      <UseMemoHook />
+      {/* posts here from postsContext - context component is wrapping child */}
+      <PostsContextProvider>
+        <ShowPostsFromContext />
+      </PostsContextProvider>
+      {/* posts here from postsContext */}
+    </div>
   );
 }
 
